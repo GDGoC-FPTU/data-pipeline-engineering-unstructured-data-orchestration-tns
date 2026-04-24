@@ -15,7 +15,7 @@ def process_pdf_data(raw_json: dict) -> dict:
     return {
         "document_id": raw_json.get("docId", ""),
         "source_type": "PDF",
-        "author": raw_json.get("author", ""),
+        "author": str(raw_json.get("authorName", "")).strip(),
         "category": raw_json.get("docCategory", ""),
         "content": cleaned_content,
         "timestamp": raw_json.get("createdAt", ""),
