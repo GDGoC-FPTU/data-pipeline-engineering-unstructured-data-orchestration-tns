@@ -24,10 +24,8 @@ def run_pipeline():
         with open(file_path, 'r') as f:
             raw_data = json.load(f)
         
-        # TODO: Bước 1: Gọi hàm xử lý PDF (process_pdf_data)
         processed = process_pdf_data(raw_data)
         
-        # TODO: Bước 2: Kiểm tra chất lượng (run_semantic_checks). 
         # Nếu đạt (True) thì thêm vào list final_kb
         if run_semantic_checks(processed):
             normalized = UnifiedDocument(**processed)
@@ -39,7 +37,6 @@ def run_pipeline():
         with open(file_path, 'r') as f:
             raw_data = json.load(f)
         
-        # TODO: Làm tương tự như phần PDF (gọi hàm xử lý Video và kiểm tra chất lượng)
         processed = process_video_data(raw_data)
         if run_semantic_checks(processed):
             normalized = UnifiedDocument(**processed)
